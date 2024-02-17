@@ -5,10 +5,10 @@ This is the starter template for the Next.js App Router Course. It contains the 
 For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
 
 
-## requirements
+## Requirements
 
-Nodejs - tested on 20.11.0
-
+- Nodejs 20.x - tested on 20.11.0
+- Nextjs 14.x - tested on 14.0.2
 
 ## Run
 
