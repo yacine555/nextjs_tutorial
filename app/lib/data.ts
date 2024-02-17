@@ -35,8 +35,10 @@ export async function fetchRevenue() {
 }
 
 export async function fetchLatestInvoices() {
+  noStore();
+
   try {
-    noStore();
+    
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
       FROM invoices
@@ -56,9 +58,10 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() {
-  try {
-    noStore();
+  noStore();
 
+  try {
+  
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
     // how to initialize multiple queries in parallel with JS.
@@ -97,6 +100,7 @@ export async function fetchFilteredInvoices(
   query: string,
   currentPage: number,
 ) {
+
   noStore();
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -153,9 +157,10 @@ export async function fetchInvoicesPages(query: string) {
 }
 
 export async function fetchInvoiceById(id: string) {
-  try {
-    noStore();
+  noStore();
 
+  try {
+  
     const data = await sql<InvoiceForm>`
       SELECT
         invoices.id,
@@ -180,9 +185,9 @@ export async function fetchInvoiceById(id: string) {
 }
 
 export async function fetchCustomers() {
-  try {
-    noStore();
+  noStore();
 
+  try {
     const data = await sql<CustomerField>`
       SELECT
         id,
@@ -200,9 +205,10 @@ export async function fetchCustomers() {
 }
 
 export async function fetchFilteredCustomers(query: string) {
+  noStore();
+  
   try {
-    noStore();
-
+    
     const data = await sql<CustomersTableType>`
 		SELECT
 		  customers.id,
