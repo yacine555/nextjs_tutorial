@@ -178,6 +178,7 @@ export async function fetchInvoiceById(id: string) {
     }));
 
     return invoice[0];
+    
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch invoice.');
@@ -206,7 +207,7 @@ export async function fetchCustomers() {
 
 export async function fetchFilteredCustomers(query: string) {
   noStore();
-  
+
   try {
     
     const data = await sql<CustomersTableType>`
